@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Cadastro | ONG Laços Solidários</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header>
+	<h1>ONG Laços Solidários</h1>
+	<button type="button" id="botao-menu" aria-expanded="false" aria-controls="menu">☰ Menu</button>
+	<nav id="menu" aria-label="Navegação principal">
+		<a href="index.html">Início</a>
+		<details class="dropdown">
+			<summary>Projetos</summary>
+			<div class="submenu">
+				<a href="projetos.html">Todos os projetos</a>
+				<a href="projetos.html#alimentos">Alimentos</a>
+				<a href="projetos.html#roupas">Roupas</a>
+			</div>
+		</details>
+		<a href="cadastro.html">Seja voluntário</a>
+	</nav>
+</header>
+<main>
+	<h1>Seja nosso voluntário!</h1>
+	<p>Preencha seus dados para demonstrar interesse em participar. Os campos com * são obrigatórios.</p>
+	<p class="aviso">Confira seus dados antes de enviar. Os campos com * são obrigatórios.</p>
+	<form id="formulario-cadastro">
+		<img src="imagens/cadastro.png" alt="Novo voluntário preenchendo uma ficha durante conversa com a equipe da ONG" width="600" style="max-width:100%;height:auto;">
+		<fieldset>
+			<legend>Dados pessoais</legend>
+			<p><label for="nome">Nome completo *</label><br>
+				<input type="text" id="nome" name="nome" autocomplete="name" minlength="3" maxlength="100" required></p>
+			<p><label for="email">E-mail *</label><br>
+				<input type="email" id="email" name="email" autocomplete="email" required></p>
+			<p><label for="nascimento">Data de nascimento *</label><br>
+				<input type="date" id="nascimento" name="nascimento" autocomplete="bday" required></p>
+			<p><label for="cpf">CPF *</label><br>
+				<input type="text" id="cpf" name="cpf" inputmode="numeric" placeholder="000.000.000-00" maxlength="14" pattern="[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}" title="Use o formato 000.000.000-00" required></p>
+			<p><label for="telefone">Telefone com DDD *</label><br>
+				<input type="tel" id="telefone" name="telefone" autocomplete="tel" placeholder="(00) 00000-0000" maxlength="15" pattern="\([0-9]{2}\) [0-9]{4,5}-[0-9]{4}" title="Use (00) 0000-0000 ou (00) 00000-0000" required></p>
+		</fieldset>
+		<fieldset>
+			<legend>Endereço</legend>
+			<p><label for="cep">CEP *</label><br>
+				<input type="text" id="cep" name="cep" autocomplete="postal-code" inputmode="numeric" placeholder="00000-000" maxlength="9" pattern="[0-9]{5}-[0-9]{3}" title="Use o formato 00000-000" required></p>
+			<p><label for="endereco">Rua ou avenida *</label><br>
+				<input type="text" id="endereco" name="endereco" autocomplete="address-line1" maxlength="150" required></p>
+			<p><label for="numero">Número *</label><br>
+				<input type="text" id="numero" name="numero" placeholder="Ex.: 120 ou s/n" maxlength="20" required></p>
+			<p><label for="complemento">Complemento</label><br>
+				<input type="text" id="complemento" name="complemento" autocomplete="address-line2" maxlength="100"></p>
+			<p><label for="bairro">Bairro *</label><br>
+				<input type="text" id="bairro" name="bairro" maxlength="100" required></p>
+			<p><label for="cidade">Cidade *</label><br>
+				<input type="text" id="cidade" name="cidade" autocomplete="address-level2" maxlength="100" required></p>
+			<p><label for="estado">Estado (UF) *</label><br>
+				<input type="text" id="estado" name="estado" autocomplete="address-level1" placeholder="Ex.: RJ" maxlength="2" pattern="AC|AL|AP|AM|BA|CE|DF|ES|GO|MA|MT|MS|MG|PA|PB|PR|PE|PI|RJ|RN|RS|RO|RR|SC|SP|SE|TO" title="Informe uma UF válida com duas letras maiúsculas, como RJ" required></p>
+		</fieldset>
+		<button type="submit">Cadastrar</button>
+	</form>
+</main>
+<dialog id="confirmacao" aria-label="Resultado do cadastro">
+	<h2>Dados preenchidos!</h2>
+	<p>Esta é uma demonstração. Nenhum dado foi enviado.</p>
+	<form method="dialog">
+		<button>Fechar</button>
+	</form>
+</dialog>
+<footer>
+	<address>Contato: <a href="mailto:contato@lacossolidarios.org">contato@lacossolidarios.org</a></address>
+</footer>
+<script src="js/menu.js"></script>
+<script src="js/projetos.js"></script>
+<script src="js/cadastro.js"></script>
+<script src="js/spa.js"></script>
+</body>
+</html>

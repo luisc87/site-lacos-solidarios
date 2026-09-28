@@ -1,0 +1,343 @@
+/* geral ---------------------------------------------*/
+:root
+{
+    --verde: #166534;
+    --verde-escuro: #14532D;
+    --laranja: #C2410C;
+    --fundo: #F8FAFC;
+    --branco: #FFFFFF;
+    --texto: #1E293B;
+    --cinza: #475569;
+    --borda: #64748B;
+    --fonte-1: 0.875rem;
+    --fonte-2: 1rem;
+    --fonte-3: 1.25rem;
+    --fonte-4: 1.75rem;
+    --fonte-5: 2.5rem;
+    --espaco-1: 0.5rem;
+    --espaco-2: 1rem;
+    --espaco-3: 1.5rem;
+    --espaco-4: 2rem;
+}
+*
+{
+    box-sizing: border-box;
+}
+body
+{
+    margin: 0;
+    font-family: Arial, sans-serif;
+    font-size: var(--fonte-2);
+    line-height: 1.6;
+    background-color: var(--fundo);
+    color: var(--texto);
+}
+h1, h2
+{
+    color: var(--verde-escuro);
+    line-height: 1.2;
+    margin: 0 0 var(--espaco-2);
+}
+h1
+{
+    font-size:clamp(1.5rem,4vw,2.5rem);
+}
+h2
+{
+    font-size: var(--fonte-4);
+}
+p
+{
+    margin: 0 0 var(--espaco-2);
+}
+a
+{
+    color: var(--verde);
+}
+a:hover
+{
+    color: var(--laranja);
+}
+img
+{
+    max-width: 100%;
+    height: auto;
+}
+button, input
+{
+    font: inherit;
+}
+/* header e menu -----------------------------------------*/
+header
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--espaco-2);
+    padding: var(--espaco-2);
+}
+header > h1, header > p
+{
+    margin: 0;
+}
+nav
+{
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--espaco-2);
+}
+#botao-menu
+{
+    display: none;
+}
+#menu
+{
+    align-items: center;
+}
+.dropdown
+{
+    position: relative;
+}
+summary
+{
+    cursor: pointer;
+}
+.submenu
+{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 180px;
+    padding: 1rem;
+    gap: 0.5rem;
+    background: var(--branco);
+    border: 1px solid var(--borda);
+    z-index: 1;
+}
+/* main -------------------------------------------------------- */
+main
+{
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: var(--espaco-2);
+    width: 100%;
+    margin: 0 auto;
+    padding: var(--espaco-2);
+}
+main > *
+{
+    grid-column: span 12;
+    min-width: 0;
+}
+main > section
+{
+    padding: var(--espaco-2);
+    background-color: var(--branco);
+}
+/* form ----------------------------------------------- */
+form
+{
+    display: flex;
+    flex-direction: column;
+    gap: var(--espaco-2);
+}
+form > button
+{
+    align-self: flex-start;
+}
+#formulario-cadastro
+{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+#formulario-cadastro > img,
+#formulario-cadastro > button
+{
+    grid-column: 1/-1;
+}
+#formulario-cadastro > button
+{
+    justify-self: start;
+}
+fieldset
+{
+    min-width: 0;
+}
+#formulario-cadastro input
+{
+    width: 100%;
+}
+input
+{
+    padding: 0.5rem;
+    border: 2px solid var(--borda);
+    border-radius: 4px;
+    max-width: 100%;
+}
+input:focus
+{
+    outline: 2px solid var(--verde);
+    outline-offset: 2px;
+}
+input:user-valid
+{
+    border-color: var(--verde);
+}
+input:user-invalid
+{
+    border-color: #B91C1C;
+}
+.erro
+{
+    display: block;
+    color: #B91C1C;
+    font-size: var(--fonte-1);
+}
+/* botoes ------------------------------------------------- */
+button
+{
+    background: var(--verde);
+    color: var(--branco);
+    border: 0;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+button:hover
+{
+    background: var(--verde-escuro);
+}
+button:focus-visible
+{
+    outline: 3px solid var(--laranja);
+    outline-offset: 3px;
+}
+button:active
+{
+    transform: scale(0.97);
+}
+button:disabled
+{
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+/* etiqueta, aviso etc -------------------------------------*/
+.etiqueta
+{
+    display: inline-block;
+    background: var(--verde);
+    color: var(--branco);
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: var(--fonte-1);
+    margin-bottom: 1rem;
+}
+.aviso
+{
+    border-left: 4px solid var(--laranja);
+    background: var(--branco);
+    padding: 1rem;
+}
+dialog
+{
+    width: 90%;
+    max-width: 450px;
+    padding: 2rem;
+    border: 2px solid var(--verde);
+    border-radius: 8px;
+    background: var(--branco);
+    color: var(--texto);
+}
+dialog::backdrop
+{
+    background: rgb(0 0 0 / 60%);
+}
+/* campanhas ---------------------------------------------*/
+#lista-campanhas
+{
+    display: grid;
+    gap: 1rem;
+}
+#lista-campanhas article
+{
+    padding: 1rem;
+    border: 1px solid var(--borda);
+}
+@media (min-width: 768px)
+{
+    #lista-campanhas
+    {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+/* adaptação para celular ----------------------------------------------- */
+@media (max-width: 767px)
+{
+    #botao-menu
+    {
+        display: block;
+    }
+    #menu
+    {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+    #menu.aberto
+    {
+        display: flex;
+    }
+    .submenu
+    {
+        position: static;
+    }
+}
+@media (min-width: 480px)
+{
+    main
+    {
+        padding: var(--espaco-3);
+    }
+}
+@media (min-width: 768px)
+{
+    #formulario-cadastro
+    {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media (min-width: 768px)
+{
+    main > section
+    {
+        grid-column: span 6;
+    }
+}
+@media (min-width: 1024px)
+{
+    main
+    {
+        padding: var(--espaco-4);
+        gap: var(--espaco-3);
+    }
+}
+@media (min-width: 1280px)
+{
+    main
+    {
+        max-width: 1200px;
+    }
+}
+@media (min-width: 1600px)
+{
+    main
+    {
+        max-width: 1400px;
+        gap: var(--espaco-4);
+    }
+}
