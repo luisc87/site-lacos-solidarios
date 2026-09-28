@@ -38,5 +38,13 @@ As mensagens de commit seguem o padrão Conventional Commits, com tipos como `fe
 - Formulário de cadastro com validações e feedback ao usuário.
 - Estrutura preparada para comportamento de SPA.
 
+## Acessibilidade
+- Uso de elementos semânticos como `header`, `nav`, `main`, `section` e `footer`.
+- Imagens com texto alternativo (`alt`).
+- Campos de formulário associados a `label`.
+- Uso de `fieldset` e `legend` quando aplicável.
+- Atributos ARIA no menu de navegação, como `aria-label`, `aria-expanded` e `aria-controls`.
+- Recursos de validação e apoio ao preenchimento, como `required`, `autocomplete`, `inputmode`, `pattern` e `title`.
+
 ## Autor
 Pedro Cantelmo
